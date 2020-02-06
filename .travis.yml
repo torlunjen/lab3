@@ -1,6 +1,6 @@
 language: java
 
-os: windows
+os: osx
 
 jdk:
   - oraclejdk13
