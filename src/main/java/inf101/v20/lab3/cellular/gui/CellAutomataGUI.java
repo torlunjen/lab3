@@ -84,7 +84,7 @@ public class CellAutomataGUI extends JPanel implements ActionListener {
 		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		CellAutomataGUI ap = new CellAutomataGUI(ca);
 		ap.initialize();
-		f.add("Center", (Component) ap);
+		f.add("Center", ap);
 		f.pack();
 		f.setVisible(true);
 	}

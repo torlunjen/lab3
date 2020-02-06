@@ -73,9 +73,30 @@ public class GameOfLife implements CellAutomaton {
 				currentGeneration.getWidth(), currentGeneration.getHeight(),
 				CellState.ALIVE);
 
-		//TODO
-		currentGeneration = nextGeneration;
+		for (int x = 0; x < nextGeneration.getWidth(); x++) {
+			for (int y = 0; y < nextGeneration.getHeight(); y++) {
+				if(currentGeneration.get(x, y) == CellState.ALIVE) {
+					switch (getLivingNeigbours(x, y)) {
+						case 0:
+						case 1:
+						case 4:
+						case 5:
+						case 6:
+						case 7:
+						case 8:
+							nextGeneration.set(x, y, CellState.DEAD);
+							break;
+					}
+				}
+				else {
+					if(getLivingNeigbours(x, y) != 3) {
+						nextGeneration.set(x, y, CellState.DEAD);
+					}
+				}
 
+			}
+		}
+		currentGeneration = nextGeneration;
 	}
 
 	/**
