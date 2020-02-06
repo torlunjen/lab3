@@ -77,16 +77,13 @@ public class GameOfLife implements CellAutomaton {
 			for (int y = 0; y < nextGeneration.getHeight(); y++) {
 				if(currentGeneration.get(x, y) == CellState.ALIVE) {
 					switch (getLivingNeigbours(x, y)) {
-						case 0:
-						case 1:
-						case 4:
-						case 5:
-						case 6:
-						case 7:
+						case 0:	case 1: case 4:
+						case 5: case 6: case 7:
 						case 8:
 							nextGeneration.set(x, y, CellState.DEAD);
 							break;
-						default: nextGeneration.set(x, y, CellState.ALIVE);
+						default:
+							break;
 					}
 				}
 				else if(getLivingNeigbours(x, y) != 3) {
@@ -111,9 +108,9 @@ public class GameOfLife implements CellAutomaton {
 	private int getLivingNeigbours(int x, int y) {
 		int numNeighbours = 0;
 		for(int neighbourX = x - 1; neighbourX <= x + 1; x++) {
-			for(int neighbourY = y - 1; neighbourY <= y + 1; y++) {
+			for (int neighbourY = y - 1; neighbourY <= y + 1; y++) {
 				try {
-					if(currentGeneration.get(neighbourX, neighbourY) == CellState.ALIVE) {
+					if (currentGeneration.get(neighbourX, neighbourY) == CellState.ALIVE) {
 						numNeighbours++;
 					}
 				} catch (IndexOutOfBoundsException ignored) {
