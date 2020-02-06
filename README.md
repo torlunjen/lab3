@@ -1,6 +1,8 @@
 Lab 3
 ===
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/7508679e96804f05bb98a228a55bd2f9)](https://app.codacy.com/manual/torlunjen/lab3?utm_source=github.com&utm_medium=referral&utm_content=torlunjen/lab3&utm_campaign=Badge_Grade_Dashboard)
+
 ## Læringsmål
 
 * Bruke `interface`
