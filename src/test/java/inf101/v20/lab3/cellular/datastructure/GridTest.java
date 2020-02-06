@@ -1,15 +1,13 @@
 package inf101.v20.lab3.cellular.datastructure;
 
 
-import static org.junit.jupiter.api.Assertions.*;
+import inf101.v20.lab3.cellular.CellState;
+import org.junit.jupiter.api.Test;
 
 import java.util.Random;
 
-import org.junit.jupiter.api.Test;
-
-import inf101.v20.lab3.cellular.CellState;
-import inf101.v20.lab3.cellular.datastructure.IGrid;
-import inf101.v20.lab3.cellular.datastructure.CellGrid;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.fail;
 
 public class GridTest {
 	Random random = new Random();

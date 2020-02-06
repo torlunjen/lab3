@@ -1,15 +1,15 @@
 package inf101.v20.lab3.cellular;
 
-import java.util.Random;
-
-import inf101.v20.lab3.cellular.datastructure.IGrid;
 import inf101.v20.lab3.cellular.datastructure.CellGrid;
+import inf101.v20.lab3.cellular.datastructure.IGrid;
+
+import java.util.Random;
 
 /**
  * 
  * An ICellAutomata that implements Conways game of life.
  * 
- * @see ICellAutomata
+ * @see CellAutomaton
  * 
  *      Every cell has two states: Alive or Dead. Each step the state of each
  *      cell is decided from its neighbors (diagonal, horizontal and lateral).
@@ -91,7 +91,19 @@ public class GameOfLife implements CellAutomaton {
 	 */
 	private int getLivingNeigbours(int x, int y) {
 		int numNeighbours = 0;
-		//TODO 
-		return numNeighbours;
+		for(int neighbourX = x - 1; neighbourX <= x + 1; x++) {
+			for(int neighbourY = y - 1; neighbourY <= y + 1; y++) {
+				try {
+					if(currentGeneration.get(neighbourX, neighbourY) == CellState.ALIVE) {
+						numNeighbours++;
+					}
+				} catch (IndexOutOfBoundsException ignored) {
+				}
+			}
+		}
+		if(currentGeneration.get(x, y) == CellState.DEAD) {
+			return numNeighbours;
+		}
+		else return numNeighbours - 1;
 	}
 }

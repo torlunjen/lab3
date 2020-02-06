@@ -25,10 +25,10 @@ public enum CellState {
 	 */
 	public Color asColor() {
 		if(this == ALIVE) {
-			return Color.GREEN;
+			return Color.BLACK;
 		}
 		else {
-			return null;
+			return Color.WHITE;
 		}
 	}
 }
