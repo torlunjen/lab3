@@ -1,15 +1,11 @@
 package inf101.v20.lab3.cellular.gui;
 
-import java.awt.BorderLayout;
-import java.awt.Component;
+import inf101.v20.lab3.cellular.CellAutomaton;
+
+import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-
-import inf101.v20.lab3.cellular.CellAutomaton;
 
 /**
  * 
@@ -21,8 +17,8 @@ public class CellAutomataGUI extends JPanel implements ActionListener {
 
 	private static final long serialVersionUID = 8755882090377973497L;
 
-	AutomatonComponent automatonComponent;
-	CellAutomaton automaton;
+	private AutomatonComponent automatonComponent;
+	private CellAutomaton automaton;
 	private javax.swing.Timer timer;
 
 	private JButton startButton;

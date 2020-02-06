@@ -24,7 +24,7 @@ public class GameOfLife implements CellAutomaton {
 	/**
 	 * The grid of cells  
 	 */
-	IGrid currentGeneration;
+	private IGrid currentGeneration;
 
 	/**
 	 * 
@@ -86,14 +86,12 @@ public class GameOfLife implements CellAutomaton {
 						case 8:
 							nextGeneration.set(x, y, CellState.DEAD);
 							break;
+						default: nextGeneration.set(x, y, CellState.ALIVE);
 					}
 				}
-				else {
-					if(getLivingNeigbours(x, y) != 3) {
+				else if(getLivingNeigbours(x, y) != 3) {
 						nextGeneration.set(x, y, CellState.DEAD);
-					}
 				}
-
 			}
 		}
 		currentGeneration = nextGeneration;
