@@ -107,8 +107,8 @@ public class GameOfLife implements CellAutomaton {
 	 */
 	private int getLivingNeigbours(int x, int y) {
 		int numNeighbours = 0;
-		for(int neighbourX = x - 1; neighbourX <= x + 1; x++) {
-			for (int neighbourY = y - 1; neighbourY <= y + 1; y++) {
+		for(int neighbourX = x - 1; neighbourX <= x + 1; neighbourX++) {
+			for (int neighbourY = y - 1; neighbourY <= y + 1; neighbourY++) {
 				try {
 					if (currentGeneration.get(neighbourX, neighbourY) == CellState.ALIVE) {
 						numNeighbours++;
@@ -117,9 +117,9 @@ public class GameOfLife implements CellAutomaton {
 				}
 			}
 		}
-		if(currentGeneration.get(x, y) == CellState.DEAD) {
-			return numNeighbours;
+		if(currentGeneration.get(x, y) == CellState.ALIVE) {
+			return numNeighbours - 1;
 		}
-		else return numNeighbours - 1;
+		else return numNeighbours;
 	}
 }
