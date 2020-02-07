@@ -9,7 +9,8 @@ import java.util.Random;
  */
 public enum CellState {
 	ALIVE,
-	DEAD;
+	DEAD,
+	DYING;
 
 	public static CellState random(Random rand){
 		return CellState.values()[rand.nextInt(2)];
@@ -25,7 +26,10 @@ public enum CellState {
 	 */
 	public Color asColor() {
 		if(this == ALIVE) {
-			return Color.BLACK;
+			return Color.MAGENTA;
+		}
+		else if(this == DYING) {
+			return  Color.BLUE;
 		}
 		else {
 			return Color.WHITE;

@@ -122,4 +122,5 @@ public class GameOfLife implements CellAutomaton {
 		}
 		else return numNeighbours;
 	}
+
 }
