@@ -26,13 +26,13 @@ public enum CellState {
 	 */
 	public Color asColor() {
 		if(this == ALIVE) {
-			return Color.MAGENTA;
+			return Color.WHITE;
 		}
 		else if(this == DYING) {
 			return  Color.BLUE;
 		}
 		else {
-			return Color.WHITE;
+			return Color.BLACK;
 		}
 	}
 }

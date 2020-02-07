@@ -26,23 +26,23 @@ class AutomatonComponent extends Component {
 	/**
 	 * The height of each cell in pixels.
 	 */
-	private final int cellHeight = 5;
+	private final int cellHeight = 2;
 
 	/**
 	 * The width of each cell in pixels.
 	 */
-	private final int cellWidth = 5;
+	private final int cellWidth = 2;
 	/**
 	 * The size of the space between each cell and between the cell and the edge
 	 * of the window.
 	 */
-	private final int padding = 1;
+	private final int padding = 0;
 	private static final long serialVersionUID = 4548104480314044678L;
 
 	/**
 	 * Construct a AutomatonComponent that will paint the given automaton.
 	 * 
-	 * @param grid
+	 * @param automaton -
 	 */
 	public AutomatonComponent(CellAutomaton automaton) {
 		this.automaton = automaton;
@@ -71,8 +71,8 @@ class AutomatonComponent extends Component {
 		for (int y = 0; y < automaton.numberOfRows(); y++) {
 				g.setColor(automaton.getCellState(x, y).asColor());
 				g.fillRect(x * (cellHeight + padding) + padding, y
-						* (cellHeight + padding) + padding, cellHeight,
-						cellWidth);
+						* (cellHeight + padding) + padding, cellWidth,
+						cellHeight);
 			}
 		}
 	}

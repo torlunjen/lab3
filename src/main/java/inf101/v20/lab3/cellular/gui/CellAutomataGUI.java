@@ -3,6 +3,7 @@ package inf101.v20.lab3.cellular.gui;
 import inf101.v20.lab3.cellular.CellAutomaton;
 
 import javax.swing.*;
+import javax.swing.border.Border;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -36,11 +37,13 @@ public class CellAutomataGUI extends JPanel implements ActionListener {
 	 */
 	public void initialize() {
 		setLayout(new BorderLayout());
+		Border border = BorderFactory.createLineBorder(Color.BLACK, 5);
 
 		automaton.initializeCells();
 		automatonComponent = new AutomatonComponent(automaton);
 
 		JPanel p = new JPanel();
+		p.setBackground(Color.BLACK);
 
 		startButton = new JButton();
 		startButton.addActionListener(this);
@@ -64,6 +67,7 @@ public class CellAutomataGUI extends JPanel implements ActionListener {
 		p.add(setBoardButton);
 		add(p, BorderLayout.NORTH);
 		add(automatonComponent, BorderLayout.CENTER);
+		setBorder(border);
 
 		timer = new javax.swing.Timer(1000/20, this);
 	}
@@ -72,17 +76,13 @@ public class CellAutomataGUI extends JPanel implements ActionListener {
 	 * 
 	 * Initializes a JFrame in which we place the a CellAutomataGUI containing
 	 * the given CellAutomaton.
-	 * 
+	 *
 	 * @param ca a CellAutomaton
 	 */
-	public static void run(CellAutomaton ca) {
-		JFrame f = new JFrame("INF101 Cell Automaton");
-		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	public static CellAutomataGUI run(CellAutomaton ca) {
 		CellAutomataGUI ap = new CellAutomataGUI(ca);
 		ap.initialize();
-		f.add("Center", ap);
-		f.pack();
-		f.setVisible(true);
+		return ap;
 	}
 
 	/*
