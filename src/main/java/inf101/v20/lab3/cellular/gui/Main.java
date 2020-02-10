@@ -16,12 +16,13 @@ public class Main {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setLayout(new GridLayout(0, 2));
 		frame.setBackground(Color.BLACK);
-		frame.setResizable(true);
-		frame.setLocationByPlatform(true);
+		//frame.setResizable(true);
+		//frame.setLocationByPlatform(true);
+		frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
 
 
-		CellAutomaton gol = new GameOfLife(400,400);
-		CellAutomaton bb = new BriansBrain(400,400);
+		CellAutomaton gol = new GameOfLife(200,200);
+		CellAutomaton bb = new BriansBrain(200,200);
 		CellAutomataGUI gameOfLife = CellAutomataGUI.run(gol);
 		CellAutomataGUI briansBrain = CellAutomataGUI.run(bb);
 

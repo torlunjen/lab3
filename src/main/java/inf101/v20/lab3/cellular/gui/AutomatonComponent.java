@@ -26,12 +26,12 @@ class AutomatonComponent extends Component {
 	/**
 	 * The height of each cell in pixels.
 	 */
-	private final int cellHeight = 2;
+	private final int cellHeight = 3;
 
 	/**
 	 * The width of each cell in pixels.
 	 */
-	private final int cellWidth = 2;
+	private final int cellWidth = 3;
 	/**
 	 * The size of the space between each cell and between the cell and the edge
 	 * of the window.
